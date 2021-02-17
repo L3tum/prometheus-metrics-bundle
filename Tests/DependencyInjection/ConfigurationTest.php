@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\Tests\DependencyInjection;
+namespace L3tum\PrometheusMetricsBundle\Tests\DependencyInjection;
 
-use Artprima\PrometheusMetricsBundle\DependencyInjection\Configuration;
+use L3tum\PrometheusMetricsBundle\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
@@ -92,7 +92,7 @@ class ConfigurationTest extends TestCase
                     'namespace' => 'myapp-with-dash',
                     'type' => 'in_memory',
                 ],
-                'Invalid configuration for path "artprima_prometheus_metrics.namespace": Invalid namespace. Make sure it matches the following regex: ^[a-zA-Z_:][a-zA-Z0-9_:]*$',
+                'Invalid configuration for path "l3tum_prometheus_metrics.namespace": Invalid namespace. Make sure it matches the following regex: ^[a-zA-Z_:][a-zA-Z0-9_:]*$',
             ],
         ];
     }

@@ -1,10 +1,13 @@
 {
-  "name": "artprima/prometheus-metrics-bundle",
+  "name": "l3tum/prometheus-metrics-bundle",
   "description": "Symfony 4/5 Prometheus Metrics Bundle",
   "keywords": [ "symfony", "symfony-bundle", "prometheus", "metrics" ],
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
+    {
+      "name": "L3tum"
+    },
     {
       "name": "Denis Voytyuk",
       "email": "ask@artprima.cz"
@@ -41,12 +44,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Artprima\\PrometheusMetricsBundle\\": "./"
+      "L3tum\\PrometheusMetricsBundle\\": "./"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Artprima\\PrometheusMetricsBundle\\": "Tests/"
+      "Tests\\L3tum\\PrometheusMetricsBundle\\": "Tests/"
     }
   }
 }

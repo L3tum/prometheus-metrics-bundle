@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\DependencyInjection;
+namespace L3tum\PrometheusMetricsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('artprima_prometheus_metrics');
+        $treeBuilder = new TreeBuilder('l3tum_prometheus_metrics');
         $rootNode = $treeBuilder->getRootNode();
 
         $supportedTypes = ['in_memory', 'apcu', 'redis'];

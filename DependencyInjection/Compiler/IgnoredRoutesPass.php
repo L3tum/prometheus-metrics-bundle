@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler;
+namespace L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler;
 
-use Artprima\PrometheusMetricsBundle\EventListener\RequestCounterListener;
+use L3tum\PrometheusMetricsBundle\EventListener\RequestCounterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

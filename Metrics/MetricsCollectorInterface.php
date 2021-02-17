@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\Metrics;
+namespace L3tum\PrometheusMetricsBundle\Metrics;
 
 use Prometheus\CollectorRegistry;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

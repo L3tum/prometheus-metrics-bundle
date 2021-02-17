@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\Controller;
+namespace L3tum\PrometheusMetricsBundle\Controller;
 
-use Artprima\PrometheusMetricsBundle\Metrics\Renderer;
+use L3tum\PrometheusMetricsBundle\Metrics\Renderer;
 
 /**
  * Class MetricsController.

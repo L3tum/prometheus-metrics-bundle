@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Artprima\PrometheusMetricsBundle;
+namespace Tests\L3tum\PrometheusMetricsBundle;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Tests\Artprima\PrometheusMetricsBundle\Fixtures\App\AppKernel;
+use Tests\L3tum\PrometheusMetricsBundle\Fixtures\App\AppKernel;
 
 /**
  * @group functional

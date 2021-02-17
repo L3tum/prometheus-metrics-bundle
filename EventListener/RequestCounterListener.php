@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\EventListener;
+namespace L3tum\PrometheusMetricsBundle\EventListener;
 
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

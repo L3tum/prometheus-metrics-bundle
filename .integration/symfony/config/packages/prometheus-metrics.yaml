@@ -1,4 +1,4 @@
-artprima_prometheus_metrics:
+l3tum_prometheus_metrics:
     namespace: symfony
     type: in_memory
     ignored_routes:

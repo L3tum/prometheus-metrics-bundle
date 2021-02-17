@@ -19,7 +19,7 @@ function patch_composer_json(): void
         'type' => 'path',
         'url' => realpath(__DIR__.'/../'),
     ]];
-    $json['require']['artprima/prometheus-metrics-bundle'] = '*';
+    $json['require']['l3tum/prometheus-metrics-bundle'] = '*';
     $json['require-dev'] = (object)$json['require-dev'];
     $json['minimum-stability'] = 'dev';
     $json['prefer-stable'] = true;

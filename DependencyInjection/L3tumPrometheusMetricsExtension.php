@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\DependencyInjection;
+namespace L3tum\PrometheusMetricsBundle\DependencyInjection;
 
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @see http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class ArtprimaPrometheusMetricsExtension extends Extension
+class L3tumPrometheusMetricsExtension extends Extension
 {
     /**
      * {@inheritdoc}

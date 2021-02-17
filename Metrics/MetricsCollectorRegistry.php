@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\Metrics;
+namespace L3tum\PrometheusMetricsBundle\Metrics;
 
 /**
  * MetricsCollectorRegistry holds all registered metric collectors.

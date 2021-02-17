@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Metrics;
 
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorInitTrait;
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInitTrait;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
 use Prometheus\Exception\MetricNotFoundException;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\TerminateEvent;

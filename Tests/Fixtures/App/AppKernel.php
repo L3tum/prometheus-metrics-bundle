@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Artprima\PrometheusMetricsBundle\Fixtures\App;
+namespace Tests\L3tum\PrometheusMetricsBundle\Fixtures\App;
 
 use Psr\Log\NullLogger;
 use Symfony\Component\Config\Loader\LoaderInterface;

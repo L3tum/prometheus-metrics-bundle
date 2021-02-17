@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle;
+namespace L3tum\PrometheusMetricsBundle;
 
-use Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler\IgnoredRoutesPass;
-use Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler\RegisterMetricsCollectorPass;
-use Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler\ResolveAdapterDefinitionPass;
+use L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler\IgnoredRoutesPass;
+use L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler\RegisterMetricsCollectorPass;
+use L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler\ResolveAdapterDefinitionPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ArtprimaPrometheusMetricsBundle extends Bundle
+class L3tumPrometheusMetricsBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

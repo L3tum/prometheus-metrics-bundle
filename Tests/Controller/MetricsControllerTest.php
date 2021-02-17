@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Artprima\PrometheusMetricsBundle\Controller;
+namespace Tests\L3tum\PrometheusMetricsBundle\Controller;
 
-use Artprima\PrometheusMetricsBundle\Controller\MetricsController;
-use Artprima\PrometheusMetricsBundle\Metrics\Renderer;
+use L3tum\PrometheusMetricsBundle\Controller\MetricsController;
+use L3tum\PrometheusMetricsBundle\Metrics\Renderer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 

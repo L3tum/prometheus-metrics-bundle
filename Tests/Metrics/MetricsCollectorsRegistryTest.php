@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Artprima\PrometheusMetricsBundle\Metrics;
+namespace Tests\L3tum\PrometheusMetricsBundle\Metrics;
 
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
 use PHPUnit\Framework\TestCase;
 
 class MetricsCollectorsRegistryTest extends TestCase

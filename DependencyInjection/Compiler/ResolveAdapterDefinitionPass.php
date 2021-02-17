@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler;
+namespace L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler;
 
 use Prometheus\Storage\APC;
 use Prometheus\Storage\InMemory;

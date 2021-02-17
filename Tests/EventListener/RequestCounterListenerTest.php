@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Artprima\PrometheusMetricsBundle\EventListener;
+namespace Tests\L3tum\PrometheusMetricsBundle\EventListener;
 
-use Artprima\PrometheusMetricsBundle\EventListener\RequestCounterListener;
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
+use L3tum\PrometheusMetricsBundle\EventListener\RequestCounterListener;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\ErrorHandler\BufferingLogger;
 use Symfony\Component\HttpFoundation\Request;

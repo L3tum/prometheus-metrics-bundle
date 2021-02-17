@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Artprima\PrometheusMetricsBundle\DependencyInjection\Compiler;
+namespace L3tum\PrometheusMetricsBundle\DependencyInjection\Compiler;
 
-use Artprima\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
+use L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorRegistry;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
