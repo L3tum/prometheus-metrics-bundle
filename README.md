@@ -1,7 +1,7 @@
 | [Master][Master Link] | [Develop][Develop Link] |
 |:----------------:|:----------------:|
 | [![Build Status][Master image]][Master] | [![Build Status][Develop image]][Develop] |
-| [![Coverage Status][Master coverage image]][Master coverage] | [![Coverage Status][Develop coverage image]][Develop coverage] |
+| [![Coverage Status][Master coverage image]] | [![Coverage Status][Develop coverage image]] |
 
 
 Symfony 5 Prometheus Metrics Bundle
