@@ -51,7 +51,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new L3tum\PrometheusMetricsBundle\l3tumPrometheusMetricsBundle(),
+            new L3tum\PrometheusMetricsBundle\L3tumPrometheusMetricsBundle(),
         );
 
         // ...
@@ -108,7 +108,7 @@ Now your metrics are available to Prometheus using http://<yourapp_url>/metrics/
 Custom Metrics Collector
 ========================
 
-If you want to collect your own metrics, you should create a class that will implement `l3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface`. Something like this:
+If you want to collect your own metrics, you should create a class that will implement `L3tum\PrometheusMetricsBundle\Metrics\MetricsCollectorInterface`. Something like this:
 
 ```php
 <?php
