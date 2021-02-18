@@ -1,2 +1,0 @@
-app_metrics:
-    resource: '@L3tumPrometheusMetricsBundle/Resources/config/routing.xml'
