@@ -33,6 +33,7 @@ class AppMetrics implements MetricsCollectorInterface
         $request = $event->getRequest();
         $requestMethod = $request->getMethod();
         $requestRoute = $request->attributes->get('_route');
+        $requestUri = $request->getUri();
 
         // do not track "OPTIONS" requests
         if ('OPTIONS' === $requestMethod) {
@@ -40,7 +41,7 @@ class AppMetrics implements MetricsCollectorInterface
         }
 
         $this->setInstance($request->server->get('HOSTNAME') ?? 'dev');
-        $this->incRequestsTotal($requestMethod, $requestRoute);
+        $this->incRequestsTotal($requestMethod, $requestRoute, $requestUri);
     }
 
     public function collectResponse(TerminateEvent $event): void
@@ -50,16 +51,17 @@ class AppMetrics implements MetricsCollectorInterface
 
         $requestMethod = $request->getMethod();
         $requestRoute = $request->attributes->get('_route');
+        $requestUri = $request->getUri();
         $statusCode = $response->getStatusCode();
 
         if ($statusCode >= 200 && $statusCode < 300) {
-            $this->incResponsesTotal('2xx', $requestMethod, $requestRoute, $statusCode);
+            $this->incResponsesTotal('2xx', $requestMethod, $requestRoute, $statusCode, $requestUri);
         } elseif ($statusCode >= 300 && $statusCode < 400) {
-            $this->incResponsesTotal('3xx', $requestMethod, $requestRoute, $statusCode);
+            $this->incResponsesTotal('3xx', $requestMethod, $requestRoute, $statusCode, $requestUri);
         } elseif ($statusCode >= 400 && $statusCode < 500) {
-            $this->incResponsesTotal('4xx', $requestMethod, $requestRoute, $statusCode);
+            $this->incResponsesTotal('4xx', $requestMethod, $requestRoute, $statusCode, $requestUri);
         } elseif ($statusCode >= 500) {
-            $this->incResponsesTotal('5xx', $requestMethod, $requestRoute, $statusCode);
+            $this->incResponsesTotal('5xx', $requestMethod, $requestRoute, $statusCode, $requestUri);
         }
 
         if ($this->stopwatch && $this->stopwatch->isStarted('execution_time')) {
@@ -102,49 +104,49 @@ class AppMetrics implements MetricsCollectorInterface
         }
     }
 
-    private function incRequestsTotal(?string $method = null, ?string $route = null): void
+    private function incRequestsTotal(?string $method = null, ?string $route = null, ?string $uri = null): void
     {
         $counter = $this->collectionRegistry->getOrRegisterCounter(
             $this->namespace,
             'http_requests_total',
             'total request count',
-            ['action']
+            ['action', 'uri']
         );
 
-        $counter->inc(['all']);
+        $counter->inc(['all', 'all']);
 
-        if (null !== $method && null !== $route) {
-            $counter->inc([sprintf('%s-%s', $method, $route)]);
+        if (null !== $method && null !== $route && null !== $uri) {
+            $counter->inc([sprintf('%s-%s', $method, $route), $uri]);
         }
     }
 
-    private function incResponsesTotal(string $type, ?string $method = null, ?string $route = null, ?int $status = null): void
+    private function incResponsesTotal(string $type, ?string $method = null, ?string $route = null, ?int $status = null, ?string $uri = null): void
     {
         $counter = $this->collectionRegistry->getOrRegisterCounter(
             $this->namespace,
             sprintf('http_%s_responses_total', $type),
             sprintf('total %s response count', $type),
-            ['action', 'status']
+            ['action', 'status', 'uri']
         );
-        $counter->inc(['all', 'all']);
+        $counter->inc(['all', 'all', 'all']);
 
-        if (null !== $method && null !== $route && null !== $status) {
-            $counter->inc([sprintf('%s-%s', $method, $route), $status]);
+        if (null !== $method && null !== $route && null !== $status && null !== $uri) {
+            $counter->inc([sprintf('%s-%s', $method, $route), $status, $uri]);
         }
     }
 
-    private function setRequestDuration(float $duration, ?string $method = null, ?string $route = null): void
+    private function setRequestDuration(float $duration, ?string $method = null, ?string $route = null, ?int $status = null, ?string $uri = null): void
     {
         $histogram = $this->collectionRegistry->getOrRegisterHistogram(
             $this->namespace,
             'request_durations_histogram_seconds',
             'request durations in seconds',
-            ['action']
+            ['action', 'status', 'uri']
         );
-        $histogram->observe($duration, ['all']);
+        $histogram->observe($duration, ['all', 'all', 'all']);
 
-        if (null !== $method && null !== $route) {
-            $histogram->observe($duration, [sprintf('%s-%s', $method, $route)]);
+        if (null !== $method && null !== $route && null !== $status && null !== $uri) {
+            $histogram->observe($duration, [sprintf('%s-%s', $method, $route), $status, $uri]);
         }
     }
 }

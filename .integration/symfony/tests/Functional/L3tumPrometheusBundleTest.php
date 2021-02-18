@@ -23,19 +23,19 @@ class L3tumPrometheusBundleTest extends WebTestCase
             trim($content)
         );
         self::assertContains(
-            'symfony_http_2xx_responses_total{action="GET-app_dummy_homepage",status="200"} 1'.PHP_EOL,
+            'symfony_http_2xx_responses_total{action="GET-app_dummy_homepage",status="200",uri="/"} 1'.PHP_EOL,
             $content
         );
         self::assertContains(
-            'symfony_http_2xx_responses_total{action="all",status="all"} 1'.PHP_EOL,
+            'symfony_http_2xx_responses_total{action="all",status="all",uri="all"} 1'.PHP_EOL,
             $content
         );
         self::assertContains(
-            'symfony_http_requests_total{action="GET-app_dummy_homepage"} 1'.PHP_EOL,
+            'symfony_http_requests_total{action="GET-app_dummy_homepage",uri="/"} 1'.PHP_EOL,
             $content
         );
         self::assertContains(
-            'symfony_http_requests_total{action="all"} 1'.PHP_EOL,
+            'symfony_http_requests_total{action="all",uri="all"} 1'.PHP_EOL,
             $content
         );
         self::assertContains(
