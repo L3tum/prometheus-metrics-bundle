@@ -67,7 +67,7 @@ class AppMetrics implements MetricsCollectorInterface
         if ($this->stopwatch && $this->stopwatch->isStarted('execution_time')) {
             $evt = $this->stopwatch->stop('execution_time');
             if (null !== $evt) {
-                $this->setRequestDuration($evt->getDuration() / 1000, $requestMethod, $requestRoute);
+                $this->setRequestDuration($evt->getDuration() / 1000, $requestMethod, $requestRoute, $statusCode, $requestUri);
             }
         }
     }
