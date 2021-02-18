@@ -40,6 +40,7 @@ jobs:
         git config --global user.email "${{ github.actor }}"
         git config --global user.name ""github-action-${{ github.actor }}@users.noreply.github.com""
         /home/runner/.symfony/bin/symfony new symfony --version=${{ matrix.symfony-versions }}
+        cp -rf .integration/symfony/* symfony/
     - name: Configure Symfony to run integration tests
       run: |
         php .integration/patch.php
@@ -49,6 +50,5 @@ jobs:
         composer require annotations -n --no-progress
     - name: Run Integration tests
       run: |
-        cp -rf .integration/symfony/* symfony/
         cd symfony
         php bin/phpunit
